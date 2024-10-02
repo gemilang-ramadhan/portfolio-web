@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./output.css" />
+        <title>Gemilang's Land</title>
+        <!-- Custom Styles for Smooth Transitions -->
+        <!-- Custom Styles for Smooth Transitions -->
+        <style>
+            /* Smooth transition for dark mode */
+            html {
+                transition: background-color 0.5s, color 0.5s;
+            }
+            /* Custom scrollbar for better aesthetics */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            /* Adjust Font Awesome Icon Colors */
+            .skill-icon {
+                color: #4a5568; /* Gray-700 */
+            }
+            .skill-icon:hover {
+                color: #1da1f2; /* Primary Color on Hover */
+            }
+            /* Adjust Contact Icons */
+            .contact-icon {
+                color: #4a5568; /* Gray-700 */
+            }
+            .contact-icon:hover {
+                color: #1da1f2; /* Primary Color on Hover */
+            }
+            /* Timeline Vertical Line */
+            .timeline::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 1rem;
+                width: 2px;
+                height: 100%;
+                z-index: -1;
+                background-color: #e2e8f0; /* Gray-200 */
+            }
+            .dark .timeline::before {
+                background-color: #4a5568; /* Gray-700 */
+            }
+        </style>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+        <link rel="icon" href="./ico/favicon.ico" type="image/x-icon" />
+        <!-- Apple Touch Icon for iOS devices -->
+        <link rel="apple-touch-icon" href="./ico/apple-touch-icon.png" />
+
+        <!-- Favicon for Android Chrome -->
+        <link rel="icon" type="image/png" href="./ico/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="./ico/android-chrome-512x512.png" sizes="512x512" />
+
+        <script src="https://kit.fontawesome.com/ef065ba207.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+        <!-- Navbar -->
+        <nav class="bg-white dark:bg-gray-800 shadow fixed w-full z-20 top-0 left-0">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="https://instagram.com/gemilang_rm" class="text-2xl font-bold text-gray-800 dark:text-purple-300 dark:hover:text-blue-200 transition duration-300">Here!</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-lg font-medium hover:text-primary dark:hover:text-primary transition duration-300">About</a>
+                    <a href="#projects" class="text-lg font-medium hover:text-primary dark:hover:text-primary transition duration-300">Projects</a>
+                    <a href="#contact" class="text-lg font-medium hover:text-primary dark:hover:text-primary transition duration-300">Contact</a>
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="ml-4 focus:outline-none" aria-label="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg id="theme-toggle-light-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.78a1 1 0 011.42 1.42l-.71.71a1 1 0 11-1.42-1.42l.71-.71zM18 9a1 1 0 100-2h-1a1 1 0 100 2h1zm-2.22 5.78a1 1 0 00-1.42-1.42l-.71.71a1 1 0 001.42 1.42l.71-.71zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-5.78-2.22a1 1 0 00-1.42 1.42l.71.71a1 1 0 001.42-1.42l-.71-.71zM4 9a1 1 0 100-2H3a1 1 0 100 2h1zm2.22-5.78a1 1 0 00-1.42-1.42l-.71.71a1 1 0 001.42 1.42l.71-.71zM10 5a5 5 0 100 10A5 5 0 0010 5z" />
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-800 dark:text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800">
+                <a href="#about" class="block px-4 py-2 text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">About</a>
+                <a href="#projects" class="block px-4 py-2 text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">Projects</a>
+                <a href="#contact" class="block px-4 py-2 text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">Contact</a>
+                <!-- Dark Mode Toggle in Mobile Menu -->
+                <button id="mobile-theme-toggle" class="w-full text-left px-4 py-2 focus:outline-none" aria-label="Toggle Dark Mode">
+                    <div class="flex items-center">
+                        <!-- Sun Icon -->
+                        <svg id="mobile-theme-toggle-light-icon" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 2.78a1 1 0 011.42 1.42l-.71.71a1 1 0 11-1.42-1.42l.71-.71zM18 9a1 1 0 100-2h-1a1 1 0 100 2h1zm-2.22 5.78a1 1 0 00-1.42-1.42l-.71.71a1 1 0 001.42 1.42l.71-.71zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-5.78-2.22a1 1 0 00-1.42 1.42l.71.71a1 1 0 001.42-1.42l-.71-.71zM4 9a1 1 0 100-2H3a1 1 0 100 2h1zm2.22-5.78a1 1 0 00-1.42-1.42l-.71.71a1 1 0 001.42 1.42l.71-.71zM10 5a5 5 0 100 10A5 5 0 0010 5z" />
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg id="mobile-theme-toggle-dark-icon" class="w-6 h-6 mr-2 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                        <span>Toggle Dark Mode</span>
+                    </div>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-black" id="home">
+            <div class="text-center px-6" data-aos="fade-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Hello, I'm <br /><span class="text-blue-600 dark:text-purple-400">Muhammad Gemilang Ramadhan</span></h1>
+                <p class="text-xl md:text-2xl mb-6 mt-6">Was born on 22nd of November 2003 in Indonesia. Started learning to code when i was 20th until now. Currently an undergraduate student of Bachelor of Electrical Engineering. I have always been passionate on programming because i find it highly interesting and have spent lots of time learning and growing especially on <span class="text-blue-600 dark:text-purple-400 font-bold">Data Science</span> field.</p>
+                <a href="#projects" class="inline-block bg-blue-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 dark:hover:bg-purple-500 transition transform hover:-translate-y-1 hover:scale-105 duration-300">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-20 bg-white dark:bg-gray-900" id="about">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="./assets/my_icon.png" alt="Your Image" class="rounded-full shadow-2xl transform hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <p class="mb-6 text-lg leading-relaxed text-justify">I'm a passionate programmer with a strong love for technology, especially in the world of Artificial Intelligence. With excellent communication skills and the ability to thrive both independently and in team settings, I consistently deliver high-quality work. Currently diving deep into machine learning, I’m always eager to push the boundaries of what's possible and embrace the future of tech.</p>
+                        <p class="mb-6 text-lg leading-relaxed text-justify">Also a Bangkit Machine Learning Cohort student, proving i am studying Machine Learning specialization as my main interest.</p>
+                        <a href="#contact" class="inline-block bg-purple-500 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-600 dark:hover:bg-purple-700 transition">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="py-20 bg-gray-100 dark:bg-gray-800" id="skills">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Frontend Skills -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Front End</h3>
+                        <div class="flex flex-col items-center space-y-6">
+                            <!-- HTML5 -->
+                            <div class="flex flex-col items-center">
+                                <i class="fab fa-html5 skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">HTML5</p>
+                            </div>
+                            <!-- CSS3 -->
+                            <div class="flex flex-col items-center">
+                                <i class="fab fa-css3-alt skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">CSS3</p>
+                            </div>
+                            <!-- Tailwind CSS -->
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-code skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">Tailwind CSS</p>
+                            </div>
+                            <!-- Bootstrap -->
+                            <div class="flex flex-col items-center">
+                                <i class="fab fa-bootstrap skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">Bootstrap</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Backend Skills -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Backend</h3>
+                        <div class="flex flex-col items-center space-y-6">
+                            <!-- Python -->
+                            <div class="flex flex-col items-center">
+                                <i class="fab fa-python skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">Python</p>
+                            </div>
+                            <!-- SQL -->
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-database skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other Skills -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Other Skills</h3>
+                        <div class="flex flex-col items-center space-y-6">
+                            <!-- Machine Learning -->
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-brain skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">Machine Learning</p>
+                            </div>
+                            <!-- Data Analysis -->
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-chart-line skill-icon text-6xl mb-2"></i>
+                                <p class="mt-2 text-lg font-medium">Data Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Vertical Timeline) -->
+        <section class="py-20 bg-white dark:bg-gray-900" id="projects">
+            <div class="container mx-auto px-12" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Projects</h2>
+                <div class="relative timeline ">
+                    <!-- Vertical Line is handled by the .timeline::before pseudo-element -->
+                    <div class="space-y-12">
+                        <!-- Project 1 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-semibold">
+                                    Data Analysis With Python <a href="https://github.com/gemilang-ramadhan/Leraning-DA"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                                </h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Created streamlit dashboard based on the data analysis i have conducted from an online dataset.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-semibold">
+                                    Small Projects in Python <a href="https://github.com/gemilang-ramadhan/SP"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                                </h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Created a bunch of small projects that i made when i was learning Python as a beginner.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-semibold">
+                                    Created Anargya ITS EV Team Website<a href="https://arek.its.ac.id/anargya/"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                                </h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">A formula EV Team in ITS Surabaya called "Anargya". Created its website using html, css, js, and bootsrap.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-semibold">
+                                    Creating My Own Personal Website<a href=""><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                                </h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">Built my website using Tailwind.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-6">
+                                <h3 class="text-2xl font-semibold">Joining Bangkit Machine Learning Cohort 2024</h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">As of now, i am one of the Bangkit Machine Leraning Cohort student.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-100 dark:bg-gray-800" id="testimonials">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">What Im Looking Forward to</h2>
+                <div class="md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-justify text-lg">
+                            My future feels deeply intertwined with technology, especially in the fields of Artificial Intelligence and Machine Learning. I’m passionate about programming and the endless possibilities it provides to create, innovate, and solve real-world problems. I envision myself working in a tech-driven environment, where I can continuously expand my knowledge and apply my skills to develop cutting-edge solutions. What excites me most is the opportunity to work on projects that push the boundaries of what’s possible—whether it’s building intelligent systems,
+                            automating complex tasks, or contributing to the advancement of AI. Creating things that have a meaningful impact, whether small or large, fuels my drive. I’m eager to be part of a field where technology and creativity meet, and I’m looking forward to the journey of learning, growing, and building alongside others who share my passion for innovation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20 bg-white dark:bg-gray-900" id="contact">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">Contact Me</h2>
+                <div class="max-w-md mx-auto">
+                    <div class="flex flex-col space-y-6">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/gemilang_rm" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
+                            <i class="fab fa-instagram contact-icon fa-2x"></i>
+                            <span class="text-lg font-medium">Instagram</span>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
+                            <i class="fab fa-linkedin contact-icon fa-2x"></i>
+                            <span class="text-lg font-medium">LinkedIn</span>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/gemilang-ramadhan/main-portfolio" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
+                            <i class="fab fa-github contact-icon fa-2x"></i>
+                            <span class="text-lg font-medium">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-200 dark:bg-gray-800 py-6">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
+                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- Facebook Icon --></svg></a
+                    >
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
+                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- Twitter Icon --></svg></a
+                    >
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
+                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- LinkedIn Icon --></svg></a
+                    >
+                    <!-- Add more social icons as needed -->
+                </div>
+                <p class="text-gray-700 dark:text-gray-300">&copy; 2024 Gemilang.</p>
+            </div>
+        </footer>
+
+        <!-- AOS (Animate On Scroll) JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <!-- JavaScript for Dark Mode Toggle, Mobile Menu, and Form Handling -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Initialize AOS
+                AOS.init({
+                    duration: 800,
+                    easing: "slide",
+                    once: true,
+                });
+
+                // Dark Mode Toggle
+                const themeToggleBtn = document.getElementById("theme-toggle");
+                const lightIcon = document.getElementById("theme-toggle-light-icon");
+                const darkIcon = document.getElementById("theme-toggle-dark-icon");
+
+                const mobileThemeToggleBtn = document.getElementById("mobile-theme-toggle");
+                const mobileLightIcon = document.getElementById("mobile-theme-toggle-light-icon");
+                const mobileDarkIcon = document.getElementById("mobile-theme-toggle-dark-icon");
+
+                // Function to toggle theme
+                const toggleTheme = () => {
+                    document.documentElement.classList.toggle("dark");
+                    if (document.documentElement.classList.contains("dark")) {
+                        localStorage.setItem("color-theme", "dark");
+                        // Update desktop icons
+                        darkIcon.classList.remove("hidden");
+                        lightIcon.classList.add("hidden");
+                        // Update mobile icons
+                        mobileDarkIcon.classList.remove("hidden");
+                        mobileLightIcon.classList.add("hidden");
+                    } else {
+                        localStorage.setItem("color-theme", "light");
+                        // Update desktop icons
+                        lightIcon.classList.remove("hidden");
+                        darkIcon.classList.add("hidden");
+                        // Update mobile icons
+                        mobileLightIcon.classList.remove("hidden");
+                        mobileDarkIcon.classList.add("hidden");
+                    }
+                };
+
+                // Initialize theme on load
+                const storedTheme = localStorage.getItem("color-theme");
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+                    document.documentElement.classList.add("dark");
+                    // Update desktop icons
+                    darkIcon.classList.remove("hidden");
+                    lightIcon.classList.add("hidden");
+                    // Update mobile icons
+                    mobileDarkIcon.classList.remove("hidden");
+                    mobileLightIcon.classList.add("hidden");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                    // Update desktop icons
+                    lightIcon.classList.remove("hidden");
+                    darkIcon.classList.add("hidden");
+                    // Update mobile icons
+                    mobileLightIcon.classList.remove("hidden");
+                    mobileDarkIcon.classList.add("hidden");
+                }
+
+                // Event listeners for theme toggles
+                themeToggleBtn.addEventListener("click", toggleTheme);
+                mobileThemeToggleBtn.addEventListener("click", toggleTheme);
+
+                // Mobile Menu Toggle
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenu = document.getElementById("mobile-menu");
+
+                mobileMenuButton.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                    mobileMenuButton.classList.toggle("open");
+                });
+
+                // Close mobile menu when clicking outside
+                window.addEventListener("click", (e) => {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        mobileMenu.classList.add("hidden");
+                        mobileMenuButton.classList.remove("open");
+                    }
+                });
+
+                // Contact Form Handling
+                const contactForm = document.getElementById("contact-form");
+                const formMessage = document.getElementById("form-message");
+
+                contactForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    // Here you can integrate with a backend service or email API
+                    // For this template, we'll just display a success message
+                    contactForm.reset();
+                    formMessage.classList.remove("hidden");
+                    setTimeout(() => {
+                        formMessage.classList.add("hidden");
+                    }, 5000);
+                });
+            });
+        </script>
+    </body>
+</html>
