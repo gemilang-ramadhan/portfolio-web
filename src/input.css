@@ -1,3 +1,144 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased text-gray-800 dark:text-gray-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-accent-blue to-accent-cyan text-white shadow-lg hover:shadow-xl hover:from-accent-blue hover:to-accent-purple hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border-2 border-accent-blue dark:border-accent-cyan text-accent-blue dark:text-accent-cyan hover:bg-accent-blue hover:text-white dark:hover:bg-accent-cyan dark:hover:text-gray-900;
+  }
+  
+  .card {
+    @apply rounded-xl overflow-hidden transition-all duration-300;
+  }
+  
+  .glass {
+    @apply bg-white/70 dark:bg-dark-100/30 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-12 text-center;
+  }
+  
+  .section-title-gradient {
+    @apply section-title text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple;
+  }
+  
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple rounded-full;
+  }
+  
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full bg-white border-2 border-accent-blue dark:border-accent-cyan absolute left-1 transform -translate-x-1/2;
+  }
+  
+  .skill-bar {
+    @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mt-2;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-accent-blue to-accent-cyan rounded-full transition-all duration-1000;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-purple;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .neumorph {
+    @apply bg-gray-100 dark:bg-dark-100 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.1)] dark:shadow-[5px_5px_15px_rgba(0,0,0,0.3),-5px_-5px_15px_rgba(255,255,255,0.05)];
+  }
+  
+  .neumorph-inset {
+    @apply bg-gray-100 dark:bg-dark-100 shadow-[inset_5px_5px_15px_rgba(0,0,0,0.1),inset_-5px_-5px_15px_rgba(255,255,255,0.1)] dark:shadow-[inset_5px_5px_15px_rgba(0,0,0,0.3),inset_-5px_-5px_15px_rgba(255,255,255,0.05)];
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0% { 
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.7);
+  }
+  100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7),
+                0 0 30px rgba(59, 130, 246, 0.5),
+                0 0 40px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* For Particle.js or similar libraries */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Gradient text for links on hover */
+a.gradient-hover:hover {
+  @apply text-gradient;
+}

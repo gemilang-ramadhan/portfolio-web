@@ -4,13 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./output.css" />
-        <title>Gemilang's Web</title>
+        <title>Gemilang's Website</title>
         <!-- Custom Styles for Smooth Transitions -->
         <!-- Custom Styles for Smooth Transitions -->
         <style>
             /* Smooth transition for dark mode */
             html {
                 transition: background-color 0.5s, color 0.5s;
+                font-family: 'Quicksand', 'Comic Neue', 'Poppins', sans-serif;
+            }
+            body {
+                font-family: 'Quicksand', 'Comic Neue', 'Poppins', sans-serif;
             }
             /* Custom scrollbar for better aesthetics */
             ::-webkit-scrollbar {
@@ -57,7 +61,8 @@
             }
         </style>
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        <!-- Replaced the Inter font with more casual fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Comic+Neue:wght@300;400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -68,7 +73,6 @@
         <!-- Favicon for Android Chrome -->
         <link rel="icon" type="image/png" href="./ico/android-chrome-192x192.png" sizes="192x192" />
         <link rel="icon" type="image/png" href="./ico/android-chrome-512x512.png" sizes="512x512" />
-
         <script src="https://kit.fontawesome.com/ef065ba207.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
@@ -126,97 +130,260 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-black" id="home">
-            <div class="text-center px-6" data-aos="fade-up">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Hello, I'm <br /><span class="text-blue-600 dark:text-purple-400">Muhammad Gemilang Ramadhan</span></h1>
-                <p class="text-xl md:text-2xl mb-6 mt-6">Was born on 22nd of November 2003 in Indonesia. Started learning to code when i was 18th until now. Currently an undergraduate student of Bachelor of Electrical Engineering. I have always been passionate on programming because i find it highly interesting and have spent lots of time learning and growing especially on <span class="text-blue-600 dark:text-purple-400 font-bold">Data Science</span> field.</p>
-                <a href="#projects" class="inline-block bg-blue-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 dark:hover:bg-purple-500 transition transform hover:-translate-y-1 hover:scale-105 duration-300">View My Work</a>
+        <!-- Hero Section without typing animation -->
+        <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:from-gray-800 dark:via-gray-900 dark:to-black overflow-hidden relative pt-16" id="home">
+            <!-- Background animated elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute opacity-50 dark:opacity-70" id="particles-js"></div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="py-20 bg-white dark:bg-gray-900" id="about">
-            <div class="container mx-auto px-6" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">About Me</h2>
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/3 mb-8 md:mb-0">
-                        <img src="./assets/my_icon.png" alt="Your Image" class="rounded-full shadow-2xl transform hover:scale-105 transition duration-500" />
-                    </div>
-                    <div class="md:w-2/3 md:pl-12">
-                        <p class="mb-6 text-lg leading-relaxed text-justify">I'm a passionate programmer with a strong love for technology, especially in the world of Artificial Intelligence. With excellent communication skills and the ability to thrive both independently and in team settings, I consistently deliver high-quality work. Currently diving deep into machine learning, I’m always eager to push the boundaries of what's possible and embrace the future of tech.</p>
-                        <p class="mb-6 text-lg leading-relaxed text-justify">Also a Bangkit Machine Learning Cohort student, proving i am studying Machine Learning specialization as my main interest.</p>
-                        <a href="#contact" class="inline-block bg-purple-500 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-600 dark:hover:bg-purple-700 transition">Get in Touch</a>
+            
+            <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl" data-aos="fade-up">
+                <div class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">Machine Learning Engineer</div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">Hello, I'm <br /><span class="text-blue-600 dark:text-purple-400">Muhammad Gemilang Ramadhan</span></h1>
+                
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 mt-4 sm:mt-6">Born November 2003 in Indonesia, I'm a passionate programmer and Electrical Engineering undergraduate with expertise in <span class="text-blue-600 dark:text-purple-400 font-bold">Machine Learning</span> and <span class="text-blue-600 dark:text-purple-400 font-bold">Data Science</span>. Currently a Google Bangkit Academy alumnus, I build AI solutions that solve real-world problems.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                    <a href="#projects" class="inline-block bg-blue-500 text-white px-6 sm:px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 dark:hover:bg-purple-500 transition transform hover:-translate-y-1 hover:scale-105 duration-300 text-sm sm:text-base">View My Projects</a>
+                    <a href="#contact" class="inline-block bg-transparent border-2 border-blue-500 dark:border-purple-500 text-blue-500 dark:text-purple-400 px-6 sm:px-8 py-3 rounded-full shadow-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition transform hover:-translate-y-1 hover:scale-105 duration-300 text-sm sm:text-base">Contact Me</a>
+                </div>
+                
+                <!-- Professional stats -->
+                <div class="mt-8 sm:mt-12 flex justify-center">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg p-2 sm:p-3 shadow-md mx-auto">
+                        <h3 class="text-base sm:text-xl font-bold text-blue-600 dark:text-purple-400 text-center">TensorFlow and Machine Learning Certified</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="py-20 bg-gray-100 dark:bg-gray-800" id="skills">
-            <div class="container mx-auto px-6" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Frontend Skills -->
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Front End</h3>
-                        <div class="flex flex-col items-center space-y-6">
-                            <!-- HTML5 -->
-                            <div class="flex flex-col items-center">
-                                <i class="fab fa-html5 skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">HTML5</p>
+        <!-- About Section -->
+        <section class="py-16 md:py-20 bg-white dark:bg-gray-900" id="about">
+            <div class="container mx-auto px-4 md:px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-2/3 sm:w-1/2 md:w-1/3 mx-auto md:mx-0 mb-8 md:mb-0">
+                        <img src="./assets/my_icon.png" alt="Your Image" class="rounded-full shadow-2xl transform hover:scale-105 transition duration-500 w-full" />
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <p class="mb-6 text-base md:text-lg leading-relaxed text-justify">I'm a passionate programmer with a strong love for technology, especially in the world of Artificial Intelligence. With excellent communication skills and the ability to thrive both independently and in team settings, I consistently deliver high-quality work. Currently diving deep into machine learning, I'm always eager to push the boundaries of what's possible and embrace the future of tech.</p>
+                        <p class="mb-6 text-base md:text-lg leading-relaxed text-justify">Also a Bangkit Machine Learning Cohort student, proving i am studying Machine Learning specialization as my main interest.</p>
+                        
+                        <!-- Professional highlights section -->
+                        <div class="mb-8 bg-blue-50 dark:bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500 dark:border-purple-500">
+                            <h3 class="text-lg md:text-xl font-bold text-blue-700 dark:text-purple-300 mb-2">Professional Highlights</h3>
+                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
+                                <li>Google Bangkit Academy 2024 Machine Learning Graduate</li>
+                                <li>Experienced in TensorFlow, Computer Vision, and NLP</li>
+                                <li>Creating Machine Learning projects for Bankit graduation</li>
+                                <li>Applying machine learning concepts to my own final year project</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3 md:gap-4">
+                            <a href="#contact" class="inline-block bg-purple-500 text-white px-3 md:px-4 py-2 rounded-lg shadow hover:bg-purple-600 dark:hover:bg-purple-700 transition text-sm md:text-base">Get in Touch</a>
+                            
+                            <!-- Resume download button -->
+                            <a href="./assets/portfolio_gemilang.pdf" download class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 md:px-4 py-2 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600 flex transition items-center text-sm md:text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Progress Bars -->
+        <section class="py-12 md:py-20 bg-gray-100 dark:bg-gray-800" id="skills">
+            <div class="container mx-auto px-4 md:px-6" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Skills</h2>
+                
+                <!-- Professional Skills Card -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-xl p-4 md:p-6 mb-8 md:mb-12">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-gray-700 dark:text-purple-300">Professional Skills</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                        <!-- Machine Learning -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-sm md:text-base text-gray-700 dark:text-gray-300">Machine Learning</span>
+                                <span class="font-medium text-sm md:text-base text-blue-600 dark:text-purple-400">85%</span>
                             </div>
-                            <!-- CSS3 -->
-                            <div class="flex flex-col items-center">
-                                <i class="fab fa-css3-alt skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">CSS3</p>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 md:h-2.5">
+                                <div class="bg-blue-600 dark:bg-purple-500 h-2 md:h-2.5 rounded-full transition-all duration-1000" style="width: 85%"></div>
                             </div>
-                            <!-- Tailwind CSS -->
-                            <div class="flex flex-col items-center">
-                                <i class="fas fa-code skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">Tailwind CSS</p>
+                        </div>
+                        
+                        <!-- Data Analysis -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-sm md:text-base text-gray-700 dark:text-gray-300">Data Analysis</span>
+                                <span class="font-medium text-sm md:text-base text-blue-600 dark:text-purple-400">90%</span>
                             </div>
-                            <!-- Bootstrap -->
-                            <div class="flex flex-col items-center">
-                                <i class="fab fa-bootstrap skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">Bootstrap</p>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 md:h-2.5">
+                                <div class="bg-blue-600 dark:bg-purple-500 h-2 md:h-2.5 rounded-full transition-all duration-1000" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Python Programming -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-sm md:text-base text-gray-700 dark:text-gray-300">Python Programming</span>
+                                <span class="font-medium text-sm md:text-base text-blue-600 dark:text-purple-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 md:h-2.5">
+                                <div class="bg-blue-600 dark:bg-purple-500 h-2 md:h-2.5 rounded-full transition-all duration-1000" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Web Development -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-sm md:text-base text-gray-700 dark:text-gray-300">Web Development</span>
+                                <span class="font-medium text-sm md:text-base text-blue-600 dark:text-purple-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 md:h-2.5">
+                                <div class="bg-blue-600 dark:bg-purple-500 h-2 md:h-2.5 rounded-full transition-all duration-1000" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- Backend Skills -->
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Backend</h3>
-                        <div class="flex flex-col items-center space-y-6">
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Technical Skills -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-xl p-4 md:p-6 h-full">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-gray-700 dark:text-purple-300">Languages</h3>
+                        <div class="flex flex-col items-center space-y-4 md:space-y-6">
                             <!-- Python -->
-                            <div class="flex flex-col items-center">
-                                <i class="fab fa-python skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">Python</p>
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-python skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Python</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
                             </div>
+                            
                             <!-- SQL -->
-                            <div class="flex flex-col items-center">
-                                <i class="fas fa-database skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">SQL</p>
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fas fa-database skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">SQL</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="far fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- HTML/CSS -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fas fa-code skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">HTML/CSS</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="far fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Other Skills -->
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-500 dark:text-purple-400">Other Skills</h3>
-                        <div class="flex flex-col items-center space-y-6">
-                            <!-- Machine Learning -->
-                            <div class="flex flex-col items-center">
-                                <i class="fas fa-brain skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">Machine Learning</p>
+                    
+                    <!-- Frameworks & Libraries -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-xl p-4 md:p-6 h-full">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-gray-700 dark:text-purple-300">Frameworks & Libraries</h3>
+                        <div class="flex flex-col items-center space-y-4 md:space-y-6">
+                            <!-- TensorFlow -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-python skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">TensorFlow</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-sm md:text-base"></i>
+                                </div>
                             </div>
-                            <!-- Data Analysis -->
-                            <div class="flex flex-col items-center">
-                                <i class="fas fa-chart-line skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">Data Analysis</p>
+                            
+                            <!-- Flask -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fas fa-server skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Flask</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="far fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
                             </div>
-                            <!-- AI Prompt -->
-                            <div class="flex flex-col items-center">
-                                <i class="fas fa-terminal skill-icon text-6xl mb-2"></i>
-                                <p class="mt-2 text-lg font-medium">AI Prompting</p>
+                            
+                            <!-- Tailwind -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-css3-alt skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Tailwind CSS</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="far fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools & Platforms -->
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-xl p-4 md:p-6 h-full sm:col-span-2 md:col-span-1">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-gray-700 dark:text-purple-300">Tools & Platforms</h3>
+                        <div class="flex flex-col items-center space-y-4 md:space-y-6">
+                            <!-- Git -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-git-alt skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Git</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-sm md:text-base"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Google Cloud -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-google skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Google Cloud</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="far fa-star text-yellow-400 text-sm md:text-base"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Jupyter -->
+                            <div class="flex flex-col items-center transition-all duration-300 hover:scale-110">
+                                <i class="fas fa-book-open skill-icon text-4xl md:text-5xl mb-1 md:mb-2"></i>
+                                <p class="mt-1 md:mt-2 text-base md:text-lg font-medium">Jupyter</p>
+                                <div class="flex mt-1">
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star text-yellow-400 text-sm md:text-base"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400 text-sm md:text-base"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,27 +392,28 @@
         </section>
 
         <!-- Projects Section (Vertical Timeline) -->
-        <section class="py-20 bg-white dark:bg-gray-900" id="projects">
-            <div class="container mx-auto px-12" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Projects</h2>
-                <div class="relative timeline ">
+        <section class="py-12 md:py-20 bg-white dark:bg-gray-900" id="projects">
+            <div class="container mx-auto px-4 md:px-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Projects</h2>
+                <div class="relative timeline">
                     <!-- Vertical Line is handled by the .timeline::before pseudo-element -->
-                    <div class="space-y-12">
+                    <div class="space-y-8 md:space-y-12">
+                        
                         <!-- Project 1 -->
                         <div class="flex">
                             <div class="flex flex-col items-center">
                                 <!-- Marker Icon -->
-                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white text-xs md:text-sm" style="color: #000000"></i>
                                 </div>
                                 <!-- Connector Line -->
                                 <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
                             </div>
-                            <div class="ml-6">
-                                <h3 class="text-2xl font-semibold">
-                                    Data Analysis With Python <a href="https://github.com/gemilang-ramadhan/Leraning-DA"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">
+                                    Data Analysis With Python <a href="https://github.com/gemilang-ramadhan/Leraning-DA"><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a>
                                 </h3>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">Created streamlit dashboard based on the data analysis i have conducted from an online dataset.</p>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Created streamlit dashboard based on the data analysis I have conducted from an online dataset.</p>
                             </div>
                         </div>
 
@@ -253,17 +421,17 @@
                         <div class="flex">
                             <div class="flex flex-col items-center">
                                 <!-- Marker Icon -->
-                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white text-xs md:text-sm" style="color: #000000"></i>
                                 </div>
                                 <!-- Connector Line -->
                                 <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
                             </div>
-                            <div class="ml-6">
-                                <h3 class="text-2xl font-semibold">
-                                    Small Projects in Python <a href="https://github.com/gemilang-ramadhan/SP"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">
+                                    Small Projects in Python <a href="https://github.com/gemilang-ramadhan/SP"><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a>
                                 </h3>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">Created a bunch of small projects that i made when i was learning Python as a beginner.</p>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Created a bunch of small projects that I made when I was learning Python as a beginner.</p>
                             </div>
                         </div>
 
@@ -271,17 +439,17 @@
                         <div class="flex">
                             <div class="flex flex-col items-center">
                                 <!-- Marker Icon -->
-                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-white border border-black rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code-fork text-white text-xs md:text-sm" style="color: #000000"></i>
                                 </div>
                                 <!-- Connector Line -->
                                 <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
                             </div>
-                            <div class="ml-6">
-                                <h3 class="text-2xl font-semibold">
-                                    Created Anargya ITS EV Team Website<a href="https://arek.its.ac.id/anargya/"><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">
+                                    Created Anargya ITS EV Team Website<a href="https://arek.its.ac.id/anargya/"><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a>
                                 </h3>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">A formula EV Team in ITS Surabaya called "Anargya". Created its website using html, css, js, and bootsrap.</p>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">A formula EV Team in ITS Surabaya called "Anargya". Created its website using HTML, CSS, JS, and Bootstrap.</p>
                             </div>
                         </div>
 
@@ -289,17 +457,22 @@
                         <div class="flex">
                             <div class="flex flex-col items-center">
                                 <!-- Marker Icon -->
-                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-purple-400 dark:bg-purple-500 border-2 border-white dark:border-gray-800 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110">
+                                    <i class="fas fa-code text-white text-xs md:text-sm"></i>
                                 </div>
                                 <!-- Connector Line -->
                                 <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
                             </div>
-                            <div class="ml-6">
-                                <h3 class="text-2xl font-semibold">
-                                    Creating My Own Personal Website<a href=""><i class="fa-solid fa-circle-arrow-right ml-3 hover:ml-5 transition-all"></i></a>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">
+                                    Professional Portfolio Website<a href=""><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a>
                                 </h3>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">Built my website using Tailwind.</p>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Designed and built a responsive personal portfolio website using Tailwind CSS and modern web technologies. Implemented custom design elements, dark mode functionality, and interactive animations for an engaging user experience.</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 rounded-full text-xs md:text-sm font-medium">Tailwind CSS</span>
+                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs md:text-sm font-medium">Responsive Design</span>
+                                    <span class="px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900 text-fuchsia-800 dark:text-fuchsia-200 rounded-full text-xs md:text-sm font-medium">JavaScript</span>
+                                </div>
                             </div>
                         </div>
 
@@ -307,15 +480,67 @@
                         <div class="flex">
                             <div class="flex flex-col items-center">
                                 <!-- Marker Icon -->
-                                <div class="w-8 h-8 bg-white border border-black rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code-fork text-white" style="color: #000000"></i>
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-blue-500 dark:bg-purple-500 border-2 border-white dark:border-gray-800 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110">
+                                    <i class="fas fa-certificate text-white text-xs md:text-sm"></i>
                                 </div>
                                 <!-- Connector Line -->
                                 <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
                             </div>
-                            <div class="ml-6">
-                                <h3 class="text-2xl font-semibold">Joining Bangkit Machine Learning Cohort 2024</h3>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">As of now, i am one of the Bangkit Machine Leraning Cohort student.</p>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">Google Bangkit Academy 2024 - ML Path<a href="https://grow.google/intl/id_id/bangkit/" target="_blank"><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a></h3>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Selected as one of 3,000 participants from over 67,000 applicants nationwide for Google's prestigious ML development program. Completed advanced coursework in TensorFlow, Computer Vision, and NLP.</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs md:text-sm font-medium">TensorFlow</span>
+                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs md:text-sm font-medium">Computer Vision</span>
+                                    <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs md:text-sm font-medium">NLP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 - Bangkit Capstone Project -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-purple-500 dark:bg-purple-600 border-2 border-white dark:border-gray-800 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110">
+                                    <i class="fas fa-brain text-white text-xs md:text-sm"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold">
+                                    JejakBatik's Application<a href="https://github.com/akhmdrdlo/JejakBatik-Capstone" target="_blank"><i class="fa-solid fa-circle-arrow-right ml-1 md:ml-3 hover:ml-2 md:hover:ml-5 transition-all"></i></a>
+                                </h3>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Led a team of cloud, ML, and android developers to create a fully functional Batik pattern recognition app as a final project of Bangkit program. Created a neural network architecture leveraging EfficientNetB0 as the base model.</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs md:text-sm font-medium">TensorFlow Lite</span>
+                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs md:text-sm font-medium">EfficientNetB0</span>
+                                    <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs md:text-sm font-medium">Android</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 7 - Autonomous Drone (In Progress) -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center">
+                                <!-- Marker Icon -->
+                                <div class="w-6 h-6 md:w-8 md:h-8 bg-green-500 dark:bg-green-600 border-2 border-white dark:border-gray-800 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110">
+                                    <i class="fas fa-drone text-white text-xs md:text-sm"></i>
+                                </div>
+                                <!-- Connector Line -->
+                                <div class="w-px flex-1 bg-gray-300 dark:bg-gray-600"></div>
+                            </div>
+                            <div class="ml-4 md:ml-6">
+                                <h3 class="text-xl md:text-2xl font-semibold flex items-center flex-wrap">
+                                    <span>Autonomous Drone Navigation</span>
+                                    <span class="ml-1 mt-1 md:ml-2 px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">In Progress</span>
+                                </h3>
+                                <p class="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">Engineered an autonomous drone navigation system with real-time obstacle avoidance using Deep Reinforcement Learning. Achieved ~77% navigation accuracy in complex environments using Python, TensorFlow, and StableBaselines3.</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs md:text-sm font-medium">Deep RL</span>
+                                    <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs md:text-sm font-medium">AirSim</span>
+                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs md:text-sm font-medium">DDPG</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -323,42 +548,68 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="py-20 bg-gray-100 dark:bg-gray-800" id="testimonials">
-            <div class="container mx-auto px-6" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">What Im Looking Forward to</h2>
-                <div class="md:flex-row md:space-x-6 space-y-6 md:space-y-0">
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-justify text-lg">
-                            My future feels deeply intertwined with technology, especially in the fields of Artificial Intelligence and Machine Learning. I’m passionate about programming and the endless possibilities it provides to create, innovate, and solve real-world problems. I envision myself working in a tech-driven environment, where I can continuously expand my knowledge and apply my skills to develop cutting-edge solutions. What excites me most is the opportunity to work on projects that push the boundaries of what’s possible—whether it’s building intelligent systems,
-                            automating complex tasks, or contributing to the advancement of AI. Creating things that have a meaningful impact, whether small or large, fuels my drive. I’m eager to be part of a field where technology and creativity meet, and I’m looking forward to the journey of learning, growing, and building alongside others who share my passion for innovation.
-                        </p>
-                    </div>
+        <!-- Vision Section (formerly Testimonials) -->
+        <section class="py-12 sm:py-16 md:py-20 bg-gray-100 dark:bg-gray-800" id="vision">
+            <div class="container mx-auto px-4 sm:px-6" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">My Vision</h2>
+                
+                <!-- Career Vision Section -->
+                <div class="bg-white dark:bg-gray-700 p-5 sm:p-8 rounded-lg shadow-lg border-l-4 border-blue-500 dark:border-purple-500">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-gray-200">My Vision</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-justify text-base sm:text-lg">
+                        My future feels deeply intertwined with technology, especially in the fields of Artificial Intelligence and Machine Learning. I'm passionate about programming and the endless possibilities it provides to create, innovate, and solve real-world problems. I envision myself working in a tech-driven environment, where I can continuously expand my knowledge and apply my skills to develop cutting-edge solutions. What excites me most is the opportunity to work on projects that push the boundaries of what's possible—whether it's building intelligent systems,
+                        automating complex tasks, or contributing to the advancement of AI.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="py-20 bg-white dark:bg-gray-900" id="contact">
-            <div class="container mx-auto px-6" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">Contact Me</h2>
+        <section class="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900" id="contact">
+            <div class="container mx-auto px-4 sm:px-6" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 dark:from-blue-500 dark:to-purple-200">Contact Me</h2>
                 <div class="max-w-md mx-auto">
-                    <div class="flex flex-col space-y-6">
+                    <div class="flex flex-col space-y-4 sm:space-y-6">
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/gemilang_rm" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
-                            <i class="fab fa-instagram contact-icon fa-2x"></i>
-                            <span class="text-lg font-medium">Instagram</span>
+                        <a href="https://www.instagram.com/gemilang_rm" target="_blank" class="flex items-center space-x-3 sm:space-x-4 p-4 sm:p-5 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 border border-transparent hover:border-gray-300 dark:hover:border-gray-600">
+                            <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+                                <i class="fab fa-instagram text-base sm:fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-base sm:text-lg font-medium">Instagram</span>
+                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">@gemilang_rm</p>
+                            </div>
+                            <div class="ml-auto">
+                                <i class="fas fa-arrow-right opacity-40 group-hover:opacity-100"></i>
+                            </div>
                         </a>
+                        
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
-                            <i class="fab fa-linkedin contact-icon fa-2x"></i>
-                            <span class="text-lg font-medium">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" class="flex items-center space-x-3 sm:space-x-4 p-4 sm:p-5 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 border border-transparent hover:border-gray-300 dark:hover:border-gray-600">
+                            <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-white">
+                                <i class="fab fa-linkedin-in text-base sm:fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-base sm:text-lg font-medium">LinkedIn</span>
+                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Muhammad Gemilang Ramadhan</p>
+                            </div>
+                            <div class="ml-auto">
+                                <i class="fas fa-arrow-right opacity-40 group-hover:opacity-100"></i>
+                            </div>
                         </a>
+                        
                         <!-- GitHub -->
-                        <a href="https://github.com/gemilang-ramadhan/main-portfolio" target="_blank" class="flex items-center space-x-4 p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow hover:bg-transparent hover:border hover:border-black dark:hover:border-white dark:hover:bg-transparent transition-all duration-300">
-                            <i class="fab fa-github contact-icon fa-2x"></i>
-                            <span class="text-lg font-medium">GitHub</span>
+                        <a href="https://github.com/gemilang-ramadhan/main-portfolio" target="_blank" class="flex items-center space-x-3 sm:space-x-4 p-4 sm:p-5 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 border border-transparent hover:border-gray-300 dark:hover:border-gray-600">
+                            <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 text-white">
+                                <i class="fab fa-github text-base sm:fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-base sm:text-lg font-medium">GitHub</span>
+                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">gemilang-ramadhan</p>
+                            </div>
+                            <div class="ml-auto">
+                                <i class="fas fa-arrow-right opacity-40 group-hover:opacity-100"></i>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -367,25 +618,16 @@
 
         <!-- Footer -->
         <footer class="bg-gray-200 dark:bg-gray-800 py-6">
-            <div class="container mx-auto px-6 text-center">
-                <div class="flex justify-center space-x-6 mb-4">
-                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
-                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- Facebook Icon --></svg></a
-                    >
-                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
-                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- Twitter Icon --></svg></a
-                    >
-                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition"
-                        ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><!-- LinkedIn Icon --></svg></a
-                    >
-                    <!-- Add more social icons as needed -->
-                </div>
-                <p class="text-gray-700 dark:text-gray-300">&copy; 2024 Gemilang.</p>
+            <div class="container mx-auto px-6">
+            <p class="text-gray-700 dark:text-gray-300 text-center">&copy; 2024 Gemilang. All rights reserved.</p>
             </div>
         </footer>
 
         <!-- AOS (Animate On Scroll) JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        
+        <!-- Particles.js for background animation -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
         <!-- JavaScript for Dark Mode Toggle, Mobile Menu, and Form Handling -->
         <script>
@@ -396,6 +638,115 @@
                     easing: "slide",
                     once: true,
                 });
+                
+                // Initialize particles.js
+                if (document.getElementById('particles-js')) {
+                    particlesJS('particles-js', {
+                        "particles": {
+                            "number": {
+                                "value": 80,
+                                "density": {
+                                    "enable": true,
+                                    "value_area": 800
+                                }
+                            },
+                            "color": {
+                                "value": "#4a5568"
+                            },
+                            "shape": {
+                                "type": "circle",
+                                "stroke": {
+                                    "width": 0,
+                                    "color": "#000000"
+                                },
+                                "polygon": {
+                                    "nb_sides": 5
+                                }
+                            },
+                            "opacity": {
+                                "value": 0.5,
+                                "random": false,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 1,
+                                    "opacity_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "size": {
+                                "value": 3,
+                                "random": true,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 40,
+                                    "size_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "line_linked": {
+                                "enable": true,
+                                "distance": 150,
+                                "color": "#4a5568",
+                                "opacity": 0.4,
+                                "width": 1
+                            },
+                            "move": {
+                                "enable": true,
+                                "speed": 2,
+                                "direction": "none",
+                                "random": false,
+                                "straight": false,
+                                "out_mode": "out",
+                                "bounce": false,
+                                "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                }
+                            }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": {
+                                "onhover": {
+                                    "enable": true,
+                                    "mode": "repulse"
+                                },
+                                "onclick": {
+                                    "enable": true,
+                                    "mode": "push"
+                                },
+                                "resize": true
+                            },
+                            "modes": {
+                                "grab": {
+                                    "distance": 400,
+                                    "line_linked": {
+                                        "opacity": 1
+                                    }
+                                },
+                                "bubble": {
+                                    "distance": 400,
+                                    "size": 40,
+                                    "duration": 2,
+                                    "opacity": 8,
+                                    "speed": 3
+                                },
+                                "repulse": {
+                                    "distance": 100,
+                                    "duration": 0.4
+                                },
+                                "push": {
+                                    "particles_nb": 4
+                                },
+                                "remove": {
+                                    "particles_nb": 2
+                                }
+                            }
+                        },
+                        "retina_detect": true
+                    });
+                }
 
                 // Dark Mode Toggle
                 const themeToggleBtn = document.getElementById("theme-toggle");
@@ -484,6 +835,11 @@
                     setTimeout(() => {
                         formMessage.classList.add("hidden");
                     }, 5000);
+                });
+
+                // Load particles.js
+                particlesJS.load('particles-js', 'path/to/particles.json', function() {
+                    console.log('particles.js loaded');
                 });
             });
         </script>
