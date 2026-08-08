@@ -3,139 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Muhammad Gemilang Ramadhan — electrical engineering graduate working in autonomous systems, path planning, applied robotics, and software development.">
+  <meta name="description" content="Portfolio of Muhammad Gemilang Ramadhan — electrical engineering graduate working in autonomous systems, path planning, machine learning, and software development.">
+  <meta name="theme-color" content="#f2efe8">
   <title>Muhammad Gemilang Ramadhan — Autonomous Systems & Software</title>
   <link rel="stylesheet" href="./output.css">
   <link rel="icon" href="./ico/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
   <script>
     if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
   </script>
 </head>
-<body class="bg-stone-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
-  <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-900/10 bg-stone-50/85 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/85" aria-label="Main navigation">
-    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
-      <a href="#home" class="font-display text-lg font-bold tracking-tight"><span class="text-teal-600">G.</span> Ramadhan</a>
-      <div class="hidden items-center gap-7 md:flex">
-        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#experience">Experience</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#skills">Skills</a>
-        <a href="#contact" class="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-600 dark:bg-white dark:text-slate-950 dark:hover:bg-teal-400">Let's talk</a>
-        <button class="theme-toggle icon-button" aria-label="Toggle color theme"><span class="theme-icon" aria-hidden="true">◐</span></button>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a href="#home" class="wordmark" aria-label="Muhammad Gemilang Ramadhan, home">
+        <span>MGR</span><small>Indonesia / ID</small>
+      </a>
+      <div class="desktop-nav">
+        <a href="#about">Profile</a><a href="#experience">Field notes</a><a href="#projects">Selected work</a><a href="#skills">Toolkit</a>
       </div>
-      <div class="flex items-center gap-2 md:hidden">
-        <button class="theme-toggle icon-button" aria-label="Toggle color theme"><span class="theme-icon" aria-hidden="true">◐</span></button>
-        <button id="menu-toggle" class="icon-button" aria-label="Open navigation" aria-expanded="false"><span class="text-xl" aria-hidden="true">☰</span></button>
+      <div class="nav-actions">
+        <button class="theme-toggle theme-button" aria-label="Toggle color theme"><span class="theme-icon" aria-hidden="true">◐</span></button>
+        <a class="contact-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        <button id="menu-toggle" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true">Menu</span></button>
       </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="#about"><span>01</span>Profile</a><a href="#experience"><span>02</span>Field notes</a><a href="#projects"><span>03</span>Selected work</a><a href="#skills"><span>04</span>Toolkit</a><a href="#contact"><span>05</span>Contact</a>
     </div>
-    <div id="mobile-menu" class="hidden border-t border-slate-900/10 bg-stone-50 px-5 py-4 dark:border-white/10 dark:bg-slate-950 md:hidden">
-      <a class="mobile-link" href="#about">About</a><a class="mobile-link" href="#experience">Experience</a><a class="mobile-link" href="#projects">Projects</a><a class="mobile-link" href="#skills">Skills</a><a class="mobile-link" href="#contact">Contact</a>
-    </div>
-  </nav>
+  </header>
 
-  <main>
-    <section id="home" class="relative isolate flex min-h-screen items-center overflow-hidden pt-24">
-      <div class="hero-grid absolute inset-0 -z-20 opacity-60 dark:opacity-25"></div>
-      <div class="absolute -right-40 top-16 -z-10 h-96 w-96 rounded-full bg-teal-300/30 blur-3xl dark:bg-teal-500/20"></div>
-      <div class="absolute -left-48 bottom-0 -z-10 h-96 w-96 rounded-full bg-amber-200/50 blur-3xl dark:bg-amber-500/10"></div>
-      <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1fr_.72fr] lg:px-8">
-        <div>
-          <div class="eyebrow"><span class="h-2 w-2 rounded-full bg-teal-500"></span> Open to engineering opportunities</div>
-          <h1 class="mt-7 max-w-4xl font-display text-5xl font-bold leading-[.98] tracking-[-.055em] sm:text-7xl lg:text-[5.4rem]">Building intelligent systems that <span class="text-teal-600 dark:text-teal-400">navigate the real world.</span></h1>
-          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">I'm Muhammad Gemilang Ramadhan, an Electrical Engineering graduate focused on autonomous systems, path planning, applied robotics, and software development.</p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#projects" class="button-primary">Explore my work <span aria-hidden="true">↘</span></a>
-            <a href="./assets/portfolio_gemilang.pdf" target="_blank" class="button-secondary">View résumé <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-500 dark:text-slate-400">
-            <a class="social-link" href="https://github.com/gemilang-ramadhan" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a class="social-link" href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a class="social-link" href="mailto:gemilangramadhan.work@gmail.com">Email ↗</a>
-          </div>
-        </div>
-        <div class="relative mx-auto w-full max-w-md">
-          <div class="absolute -inset-4 rotate-3 rounded-[2.5rem] border border-teal-500/30"></div>
-          <div class="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-white/10 dark:bg-slate-900/60">
-            <img src="./assets/my_icon.png" alt="Muhammad Gemilang Ramadhan" class="aspect-square w-full rounded-[1.45rem] object-cover object-top">
-            <div class="flex items-center justify-between px-2 pb-1 pt-5">
-              <div><p class="font-display text-lg font-bold">Electrical Engineering</p><p class="text-sm text-slate-500 dark:text-slate-400">Control Systems · ITS Surabaya</p></div>
-              <span class="rounded-full bg-teal-100 px-3 py-1 text-xs font-bold text-teal-700 dark:bg-teal-400/10 dark:text-teal-300">2026</span>
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="hero-status"><span class="status-dot"></span>Available for engineering opportunities <span class="status-place">2026 / Indonesia</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="index-label">Portfolio / 2026</p>
+          <h1>I build systems that know <em>where to go.</em></h1>
+          <div class="hero-intro">
+            <div class="hero-summary">
+              <p>Electrical Engineering graduate focused on autonomous systems, path planning, machine learning, and software development.</p>
+              <div class="hero-socials"><a href="https://github.com/gemilang-ramadhan" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+            </div>
+            <div class="hero-links">
+              <a href="#projects">View selected work <span>↓</span></a>
+              <a class="resume-download" href="./assets/portfolio_gemilang.pdf" download>Download resume <span>↓</span></a>
             </div>
           </div>
         </div>
+        <figure class="portrait-block">
+          <div class="portrait-frame"><img src="./assets/my_icon.png" alt="Portrait of Muhammad Gemilang Ramadhan"></div>
+          <figcaption><span>Fig. 01</span></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="about" class="section-shell">
-      <div class="section-heading"><p class="section-kicker">01 / About</p><h2>Engineering clarity into complex systems.</h2></div>
-      <div class="grid gap-10 lg:grid-cols-[1.25fr_.75fr]">
-        <div class="space-y-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-          <p>My work sits where software meets physical systems. Through my undergraduate thesis, I develop autonomous navigation for unmanned surface vehicles using Lazy Theta Star for global planning and SAPF-DDPG for adaptive local obstacle avoidance.</p>
-          <p>I enjoy algorithmic problem-solving, simulation-based analysis, and turning technical concepts into implementations that can be clearly explained, tested, and used.</p>
+    <section id="about" class="section-shell about-section">
+      <header class="section-header"><p>01 / Profile</p><p>Background &amp; direction</p></header>
+      <div class="about-layout">
+        <h2>Software meets<br><span>physical systems.</span></h2>
+        <div class="about-copy">
+          <p>My work starts with a physical problem: a vessel needs to move, an obstacle will not stay still, or a product has to work for a real customer. I translate that uncertainty into systems that can be explained, simulated, tested, and used.</p>
+          <p>For my undergraduate thesis, I develop autonomous navigation for unmanned surface vehicles using Lazy Theta*-DDPG for global path planning and SAPF-DDPG for adaptive local obstacle avoidance.</p>
         </div>
-        <div class="rounded-3xl bg-slate-900 p-7 text-white dark:bg-slate-900/70 dark:ring-1 dark:ring-white/10">
-          <p class="text-xs font-bold uppercase tracking-[.18em] text-teal-400">Education</p>
-          <h3 class="mt-4 font-display text-xl font-bold">Sepuluh Nopember Institute of Technology</h3>
-          <p class="mt-2 text-slate-300">Electrical Engineering<br>Control Systems specialization</p>
-          <div class="mt-6 flex items-center justify-between border-t border-white/10 pt-5 text-sm"><span>Surabaya, Indonesia</span><span>Graduating Oct 2026</span></div>
+        <aside class="education-note">
+          <p class="note-label">Education record</p>
+          <h3>Sepuluh Nopember<br>Institute of Technology</h3>
+          <dl><div><dt>Program</dt><dd>Electrical Engineering</dd></div><div><dt>GPA</dt><dd>3.32 / 4.00</dd></div><div><dt>Location</dt><dd>Indonesia</dd></div><div><dt>Graduation</dt><dd>Oct 2026</dd></div></dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience" class="section-shell experience-section">
+      <header class="section-header"><p>02 / Field notes</p><p>Professional experience</p></header>
+      <div class="experience-intro"><h2>Work, in context.</h2><p>Two roles, two very different settings—from shipping a customer-facing commerce product to shaping the public identity of an electric vehicle team.</p></div>
+      <div class="experience-list">
+        <article class="experience-item">
+          <div class="experience-index">A / 01</div>
+          <div class="experience-title"><p>Jun — Aug 2025 / Freelance</p><h3>Kulkas Babe</h3><span>E-Commerce Front-End Web Developer</span></div>
+          <ul><li>Built responsive, dynamic shopping experiences as the sole front-end developer in a two-person team.</li><li>Integrated Midtrans QRIS payment flows and Google Maps distance and fee calculations.</li><li>Created maintainable components with Laravel Blade, Alpine.js, Tailwind CSS, and JavaScript.</li></ul>
+        </article>
+        <article class="experience-item">
+          <div class="experience-index">A / 02</div>
+          <div class="experience-title"><p>Dec 2023 — Nov 2024</p><h3>Anargya ITS EV Team</h3><span>Web Developer &amp; Designer</span></div>
+          <ul><li>Translated Figma designs into a responsive, accessible public website using Bootstrap.</li><li>Built a reusable visual system spanning typography, spacing, colors, and digital assets for consistent web and social media presentation.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell projects-section">
+      <header class="section-header"><p>03 / Selected work</p><p>Research, product, application</p></header>
+      <article class="project-featured">
+        <figure class="project-map"><img src="./assets/Figure_1.png" alt="Lazy Theta*-DDPG and SAPF-DDPG USV navigation simulation showing its trajectory, start and goal points, waypoint, and dynamic obstacles"></figure>
+        <div class="project-featured-copy">
+          <p class="project-code">P–01 / Undergraduate thesis / Jan — Jul 2026</p>
+          <h2>Lazy Theta*-DDPG<br><em>+ SAPF-DDPG.</em></h2>
+          <p>Applied DDPG as an adaptive parameter tuner for both path-planning algorithms: heuristic and clearance weights in Lazy Theta*, plus attractive gain, repulsive gain, and safe distance in SAPF. Lazy Theta*-DDPG achieved a simulated path length of 50.3 m in 37.8 s, and the complete system was evaluated in simulation and on the LSS-01 platform.</p>
+          <ul class="tech-list"><li>Python</li><li>NumPy</li><li>OpenCV</li><li>Reinforcement Learning</li><li>USV Control</li></ul>
         </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section-shell border-y border-slate-900/10 bg-white/70 dark:border-white/10 dark:bg-slate-900/25">
-      <div class="section-heading"><p class="section-kicker">02 / Experience</p><h2>From product interfaces to technical systems.</h2></div>
-      <div class="divide-y divide-slate-900/10 border-y border-slate-900/10 dark:divide-white/10 dark:border-white/10">
-        <article class="experience-row">
-          <div><p class="meta">Jun — Aug 2025 · Freelance</p><h3>Kulkas Babe</h3><p class="role">Multi-Tenant E-Commerce Front-End</p></div>
-          <ul class="detail-list"><li>Built responsive, dynamic shopping experiences as the sole front-end developer in a two-person team.</li><li>Integrated Midtrans QRIS payment flows and Google Maps distance and fee calculations.</li><li>Created maintainable components with Laravel Blade, Alpine.js, Tailwind CSS, and JavaScript.</li></ul>
+      </article>
+      <div class="project-pair">
+        <article class="project-secondary">
+          <div class="project-topline"><span>P–02 / Nov — Dec 2024</span><span>Pattern recognition / 85% accuracy</span></div>
+          <h3>JejakBatik</h3><p>End-to-end pattern-recognition pipeline built around EfficientNetB0, from data preparation and augmentation through evaluation and responsive on-device inference.</p>
+          <ul class="tech-list"><li>TensorFlow</li><li>OpenCV</li><li>EfficientNetB0</li></ul>
+          <a href="https://github.com/akhmdrdlo/JejakBatik-Capstone" target="_blank" rel="noreferrer">Repository ↗</a>
         </article>
-        <article class="experience-row">
-          <div><p class="meta">Dec 2023 — Nov 2024</p><h3>Anargya ITS EV Team</h3><p class="role">Web Developer & Designer</p></div>
-          <ul class="detail-list"><li>Translated Figma designs into a responsive, accessible public website using Bootstrap.</li><li>Built a lightweight visual system spanning color, typography, spacing, and social assets.</li><li>Produced sponsor and announcement content supporting team and partner visibility.</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section-shell">
-      <div class="section-heading"><p class="section-kicker">03 / Selected projects</p><h2>Work grounded in real problems.</h2></div>
-      <div class="grid gap-6 lg:grid-cols-2">
-        <article class="project-card lg:col-span-2">
-          <div class="project-visual usv-visual" aria-hidden="true"><span class="radar-ring ring-one"></span><span class="radar-ring ring-two"></span><span class="route-line"></span><span class="boat">▲</span><span class="obstacle obstacle-one"></span><span class="obstacle obstacle-two"></span></div>
-          <div class="project-copy"><div class="flex flex-wrap items-center gap-3"><span class="project-number">01</span><span class="tag">Undergraduate thesis</span><span class="meta">Jan — Jul 2026</span></div><h3>USV Path Planning using Lazy Theta Star & SAPF-DDPG</h3><p>Combined global path planning with adaptive local avoidance for autonomous USV navigation. The system uses a 4-DOF model, static and dynamic obstacle scenarios, G2 Continuous Bézier Spiral smoothing, and DDPG-tuned SAPF parameters, evaluated in simulation and on the LSS-01 platform.</p><div class="tag-row"><span>Python</span><span>NumPy</span><span>OpenCV</span><span>Reinforcement Learning</span><span>USV Control</span></div></div>
-        </article>
-        <article class="project-card project-card-small">
-          <div class="project-copy"><div class="flex items-center gap-3"><span class="project-number">02</span><span class="tag">85% accuracy</span></div><h3>JejakBatik</h3><p>Architected an end-to-end pattern-recognition pipeline around EfficientNetB0, from preparation and augmentation through evaluation and responsive on-device inference.</p><div class="tag-row"><span>TensorFlow</span><span>OpenCV</span><span>EfficientNetB0</span></div><a class="inline-link" href="https://github.com/akhmdrdlo/JejakBatik-Capstone" target="_blank" rel="noreferrer">View repository ↗</a></div>
-        </article>
-        <article class="project-card project-card-small bg-teal-700 text-white dark:bg-teal-800">
-          <div class="project-copy"><div class="flex items-center gap-3"><span class="project-number !border-white/30 !text-white">03</span><span class="tag !bg-white/10 !text-teal-50">E-commerce</span></div><h3>Kulkas Babe</h3><p class="!text-teal-50/80">A responsive multi-tenant shopping experience with payment, distance-based delivery fees, reusable interface components, and close front-end/back-end collaboration.</p><div class="tag-row light"><span>Laravel Blade</span><span>Alpine.js</span><span>Tailwind</span><span>Midtrans</span></div><a class="inline-link text-white" href="https://kulkasbabe.id" target="_blank" rel="noreferrer">Visit website ↗</a></div>
+        <article class="project-secondary project-inverse">
+          <div class="project-topline"><span>P–03</span><span>Commerce / Production</span></div>
+          <h3>Kulkas Babe</h3><p>A responsive e-commerce experience with QRIS payment, distance-based delivery fees, reusable interface components, and close front-end/back-end collaboration.</p>
+          <ul class="tech-list"><li>Laravel Blade</li><li>Alpine.js</li><li>Midtrans</li></ul>
+          <a href="https://kulkasbabe.id" target="_blank" rel="noreferrer">Live website ↗</a>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section-shell border-y border-slate-900/10 bg-slate-900 text-white dark:border-white/10">
-      <div class="section-heading"><p class="section-kicker text-teal-400">04 / Capabilities</p><h2>Tools I use to move ideas into reality.</h2></div>
-      <div class="grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="skill-group"><span>01</span><h3>Autonomy & ML</h3><p>TensorFlow · PyTorch · OpenCV · Reinforcement learning · Path planning</p></div>
-        <div class="skill-group"><span>02</span><h3>Programming & Data</h3><p>Python · JavaScript · SQL · NumPy · Data analysis</p></div>
-        <div class="skill-group"><span>03</span><h3>Web Development</h3><p>React · Tailwind · Bootstrap · Vite · Node.js · Express</p></div>
-        <div class="skill-group"><span>04</span><h3>Product Delivery</h3><p>Laravel Blade · Alpine.js · Responsive UI · API integration</p></div>
-        <div class="skill-group"><span>05</span><h3>Workflow</h3><p>Git · GitHub · Jira · Notion · Figma · Technical communication</p></div>
-        <div class="skill-group"><span>06</span><h3>Languages</h3><p>Indonesian — native<br>English — fluent</p></div>
+    <section id="skills" class="section-shell skills-section">
+      <header class="section-header"><p>04 / Toolkit</p><p>Methods, tools &amp; certifications</p></header>
+      <div class="skills-heading"><h2>How I make<br>things move.</h2><p>A practical toolkit assembled around autonomy, software, and getting working systems over the line.</p></div>
+      <div class="skills-ledger">
+        <div class="skill-row"><span>01</span><h3>Autonomy &amp; ML</h3><p>TensorFlow / PyTorch / OpenCV / Reinforcement learning / Path planning</p></div>
+        <div class="skill-row"><span>02</span><h3>Programming &amp; Data</h3><p>Python / JavaScript / SQL / NumPy / Data analysis</p></div>
+        <div class="skill-row"><span>03</span><h3>Web Development</h3><p>React / Tailwind / Bootstrap / Vite / Node.js / Express</p></div>
+        <div class="skill-row"><span>04</span><h3>Workflow</h3><p>Git / GitHub / Jira / Notion / Figma / Technical communication</p></div>
+        <div class="skill-row"><span>05</span><h3>Languages</h3><p>Indonesian — native / English — professional working proficiency</p></div>
       </div>
-      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="cert-card"><p>2024</p><h3>Bangkit Machine Learning Path Graduate</h3></div><div class="cert-card"><p>2023</p><h3>Udemy 100 Days of Python</h3></div><div class="cert-card"><p>2023</p><h3>MySkill Microsoft Excel</h3></div><div class="cert-card"><p>2023</p><h3>MySkill SQL for Data Analysis</h3></div>
-      </div>
+      <div class="certifications"><p class="note-label">Selected credentials</p><div><span>2024</span><p>Overall Event Winner, 8th Annual FSEV Concept Challenge, PI-EV</p></div><div><span>2024</span><p>Bangkit Academy — Machine Learning Path</p></div><div><span>2023</span><p>MySkill Microsoft Excel</p></div><div><span>2023</span><p>MySkill SQL for Data Analysis</p></div></div>
     </section>
 
-    <section id="contact" class="section-shell text-center">
-      <p class="section-kicker">05 / Contact</p>
-      <h2 class="mx-auto mt-4 max-w-4xl font-display text-4xl font-bold tracking-tight sm:text-6xl">Have an interesting system to build? <span class="text-teal-600 dark:text-teal-400">Let's connect.</span></h2>
-      <a href="mailto:gemilangramadhan.work@gmail.com" class="mt-9 inline-block border-b-2 border-teal-500 pb-1 text-lg font-bold sm:text-2xl">gemilangramadhan.work@gmail.com</a>
-      <div class="mt-8 flex flex-wrap justify-center gap-5 text-sm font-semibold"><a class="social-link" href="tel:+6281373930922">+62 813-7393-0922</a><a class="social-link" href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="social-link" href="https://github.com/gemilang-ramadhan" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social-link" href="./assets/portfolio_gemilang.pdf" download>Download résumé ↓</a></div>
+    <section id="contact" class="contact-section">
+      <p class="index-label">05 / Contact</p>
+      <h2>Have a system<br>worth figuring out?</h2>
+      <a class="email-link" href="mailto:gemilangramadhan.work@gmail.com">gemilangramadhan.work@gmail.com <span>↗</span></a>
+      <div class="contact-meta"><p>Based in Indonesia<br>Open to engineering opportunities</p><div><a href="tel:+6281373930922">+62 813-7393-0922</a><a href="https://www.linkedin.com/in/muhammad-gemilang-ramadhan/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/gemilang-ramadhan" target="_blank" rel="noreferrer">GitHub ↗</a><a href="./assets/portfolio_gemilang.pdf" download>Resume ↓</a></div></div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-900/10 px-5 py-8 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-2 sm:flex-row"><p>© <span id="year"></span> Muhammad Gemilang Ramadhan</p><p>Engineered with purpose in Surabaya, Indonesia.</p></div></footer>
+  <footer><p>© <span id="year"></span> Muhammad Gemilang Ramadhan</p><p>Designed with intent. Engineered in Indonesia.</p><a href="#home">Back to top ↑</a></footer>
   <script src="./script.js"></script>
 </body>
 </html>

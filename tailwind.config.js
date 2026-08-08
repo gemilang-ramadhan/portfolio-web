@@ -5,8 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['Archivo', 'sans-serif'],
+        display: ['Newsreader', 'serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       colors: {
         primary: '#1DA1F2',
