@@ -75,8 +75,10 @@ button { color:inherit; font:inherit; }
 .experience-item ul { list-style:none; margin:0; padding:0; color:color-mix(in srgb,var(--paper) 70%,transparent); line-height:1.55; }
 .experience-item li { position:relative; padding:0 0 .8rem 1.25rem; }.experience-item li::before { content:'—'; position:absolute; left:0; color:var(--signal); }
 .project-featured { margin-top:clamp(4rem,8vw,8rem); display:grid; grid-template-columns:1.15fr .85fr; border:1px solid var(--ink); }
-.project-map { min-height:0; aspect-ratio:810/634; margin:0; overflow:hidden; display:grid; place-items:center; background:#fff; }
-.project-map img { display:block; width:100%; height:100%; object-fit:contain; }
+.project-map { min-height:0; margin:0; overflow:hidden; display:flex; flex-direction:column; background:var(--panel); }
+.project-map img { display:block; width:100%; height:auto; aspect-ratio:810/634; object-fit:contain; background:#fff; }
+.project-map figcaption { flex:1; min-height:7rem; display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; padding:clamp(1.25rem,2.2vw,2.25rem); border-top:1px solid var(--line); color:var(--muted); font:500 .62rem/1.5 'IBM Plex Mono',monospace; text-transform:uppercase; }
+.project-map figcaption span:last-child { text-align:right; }
 .project-featured-copy { display:flex; flex-direction:column; justify-content:flex-end; padding:clamp(2rem,3vw,3rem); background:var(--panel); }
 .project-featured h2 { margin:1.4rem 0; font-size:clamp(2.5rem,3.35vw,4rem); line-height:.92; letter-spacing:-.05em; }.project-featured-copy>p:not(.project-code) { margin:0; color:var(--muted); line-height:1.5; }
 .tech-list { list-style:none; display:flex; flex-wrap:wrap; gap:.35rem 1.15rem; margin:1.4rem 0 0; padding:.8rem 0 0; border-top:1px solid var(--line); color:var(--muted); font:500 .62rem 'IBM Plex Mono',monospace; text-transform:uppercase; }
